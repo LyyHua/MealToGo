@@ -49,8 +49,8 @@ export default function RestaurantInfo({
         <Title>{name}</Title>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml xml={star} width={20} height={20} />
+            {ratingArray.map((_, index) => (
+              <SvgXml key={index} xml={star} width={20} height={20} />
             ))}
           </Rating>
           <SectionEnd>
