@@ -1,5 +1,6 @@
 import { theme } from "@/constants/Index";
-import RestaurantsScreen from "@/src/features/restaurants/screens/restaurants.screen";
+import { RestaurantsScreen } from "@/src/features/restaurants/screens/restaurants.screen";
+import { RestaurantsContextProvider } from "@/src/services/restaurants/restaurants.context";
 import { Lato_400Regular } from "@expo-google-fonts/lato";
 import { Oswald_400Regular, useFonts } from "@expo-google-fonts/oswald";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
@@ -11,14 +12,16 @@ export default function Root() {
   });
   const [ladoLoader] = useFonts({
     Lato_400Regular,
-  })
+  });
   if (!oswaldLoaded || !ladoLoader) {
     return null;
   }
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsScreen />
+        <RestaurantsContextProvider>
+          <RestaurantsScreen />
+        </RestaurantsContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

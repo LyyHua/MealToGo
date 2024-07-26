@@ -3,7 +3,11 @@ import chicago from "./chicago.json";
 import toronto from "./toronto.json";
 import san_francisco from "./san_francisco.json";
 
-export const mocks = {
+type Mocks = {
+  [key: string]: typeof antwerp | typeof chicago | typeof toronto | typeof san_francisco;
+};
+
+export const mocks: Mocks = {
   "51.219448,4.402464": antwerp,
   "43.653225,-79.383186": toronto,
   "41.878113,-87.629799": chicago,
