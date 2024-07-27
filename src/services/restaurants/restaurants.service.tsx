@@ -1,6 +1,5 @@
+import camelize from "camelize";
 import { mockImages, mocks } from "./mock";
-
-var camelize = require("camelize");
 
 export const restaurantsRequest = (location = "37.7749295,-122.4194155") => {
   return new Promise((resolve, reject) => {

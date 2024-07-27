@@ -1,5 +1,6 @@
 import { theme } from "@/constants/Index";
 import { RestaurantsScreen } from "@/src/features/restaurants/screens/restaurants.screen";
+import { LocationContextProvider } from "@/src/services/location/location.context";
 import { RestaurantsContextProvider } from "@/src/services/restaurants/restaurants.context";
 import { Lato_400Regular } from "@expo-google-fonts/lato";
 import { Oswald_400Regular, useFonts } from "@expo-google-fonts/oswald";
@@ -19,9 +20,11 @@ export default function Root() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
-          <RestaurantsScreen />
-        </RestaurantsContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <RestaurantsScreen />
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
