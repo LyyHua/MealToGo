@@ -1,11 +1,11 @@
 import { theme } from "@/constants/Index";
-import { RestaurantsScreen } from "@/src/features/restaurants/screens/restaurants.screen";
 import { LocationContextProvider } from "@/src/services/location/location.context";
 import { RestaurantsContextProvider } from "@/src/services/restaurants/restaurants.context";
 import { Lato_400Regular } from "@expo-google-fonts/lato";
 import { Oswald_400Regular, useFonts } from "@expo-google-fonts/oswald";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 import { ThemeProvider } from "styled-components/native";
+import TabLayout from "./_layout";
 
 export default function Root() {
   const [oswaldLoaded] = useFonts({
@@ -22,7 +22,7 @@ export default function Root() {
       <ThemeProvider theme={theme}>
         <LocationContextProvider>
           <RestaurantsContextProvider>
-            <RestaurantsScreen />
+            <TabLayout/>
           </RestaurantsContextProvider>
         </LocationContextProvider>
       </ThemeProvider>

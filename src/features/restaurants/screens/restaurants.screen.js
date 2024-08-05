@@ -10,7 +10,7 @@ import { SafeArea } from "../../../components/utility/safe-area.component";
 import { RestaurantInfoCard } from "../components/restaurant-info.component";
 import { Search } from "../components/search.component";
 
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = ( {navigation} ) => {
   const { isLoading, error, restaurants } = useContext(RestaurantsContext);
   console.log(error);
   return (
