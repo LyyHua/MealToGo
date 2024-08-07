@@ -1,7 +1,6 @@
 import React from "react";
 import { SvgXml } from "react-native-svg";
 
-import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import star from "../../../../assets/images/star";
 import open from "../../../../assets/images/open";
@@ -16,6 +15,7 @@ import {
   Icon,
   Address,
 } from "./restaurant-info.styles";
+import { Spacer } from "@/src/components/spacer/spacer.component";
 
 type Restaurant = {
   name?: string;

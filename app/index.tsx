@@ -5,7 +5,7 @@ import { Lato_400Regular } from "@expo-google-fonts/lato";
 import { Oswald_400Regular, useFonts } from "@expo-google-fonts/oswald";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 import { ThemeProvider } from "styled-components/native";
-import TabLayout from "./_layout";
+import { RestaurantsNavigator } from "@/src/infrastructure/navigation/restaurants.navigator";
 
 export default function Root() {
   const [oswaldLoaded] = useFonts({
@@ -22,7 +22,7 @@ export default function Root() {
       <ThemeProvider theme={theme}>
         <LocationContextProvider>
           <RestaurantsContextProvider>
-            <TabLayout/>
+            <RestaurantsNavigator/>
           </RestaurantsContextProvider>
         </LocationContextProvider>
       </ThemeProvider>

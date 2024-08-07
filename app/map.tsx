@@ -1,7 +1,7 @@
-import { Text } from "react-native";
+import { MapScreen } from "@/src/features/map/screens/map.screen";
 
 export default function map() {
   return (
-    <Text>Map</Text>
+    <MapScreen/>
   )
 }
