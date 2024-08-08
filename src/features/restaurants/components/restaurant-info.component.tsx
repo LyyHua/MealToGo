@@ -16,6 +16,8 @@ import {
   Address,
 } from "./restaurant-info.styles";
 import { Spacer } from "@/src/components/spacer/spacer.component";
+import { Favourite } from "@/src/components/favorites/favorite.component";
+import { View } from "react-native";
 
 type Restaurant = {
   name?: string;
@@ -44,7 +46,10 @@ export const RestaurantInfoCard = ({ restaurant = {} as Restaurant }) => {
 
   return (
     <RestaurantCard elevation={5}>
-      <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+      <View>
+        <Favourite restaurant={restaurant} />
+        <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
+      </View>
       <Info>
         <Text variant="label">{name}</Text>
         <Section>
