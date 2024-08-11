@@ -29,7 +29,7 @@ type Restaurant = {
   isClosedTemporarily?: boolean;
 };
 
-export const RestaurantInfoCard = ({ restaurant = {} as Restaurant }) => {
+export const RestaurantInfoCard = ({ restaurant }: {restaurant: any}) => {
   const {
     name = "Some Restaurant",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",

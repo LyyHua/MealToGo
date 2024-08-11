@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "src/services/restaurants/restaurants.context.js", "src/features/restaurants/screens/restaurants.screen.js", "src/features/restaurants/components/restaurant-info.component.tsx", "src/features/restaurants/components/restaurant-info.styles.tsx", "src/services/location/location.context.js", "src/infrastructure/navigation/restaurants.navigator.tsx", "src/features/map/screens/map.screen.js", "src/services/favorites/favorites.context.js"  ]
+, "src/services/restaurants/restaurants.context.js", "src/features/restaurants/screens/restaurants.screen.tsx", "src/features/restaurants/components/restaurant-info.component.tsx", "src/features/restaurants/components/restaurant-info.styles.tsx", "src/services/location/location.context.js", "src/infrastructure/navigation/restaurants.navigator.tsx", "src/features/map/screens/map.screen.js", "src/services/favorites/favorites.context.js"  ]
 }
