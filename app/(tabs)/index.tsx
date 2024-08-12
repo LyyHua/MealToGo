@@ -7,7 +7,10 @@ import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
 import { ThemeProvider } from "styled-components/native";
 import { RestaurantsNavigator } from "@/src/infrastructure/navigation/restaurants.navigator";
 import { initializeApp } from "firebase/app";
-import { config } from 'dotenv';
+import { config } from "dotenv";
+import { useState } from "react";
+import { AuthenticationContextProvider } from "@/src/services/authentication/authentication.context";
+import { FavouritesContextProvider } from "@/src/services/favorites/favorites.context";
 
 config();
 
@@ -20,7 +23,7 @@ const firebaseConfig = {
   appId: process.env.FIREBASE_APP_ID,
 };
 
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 export default function Root() {
   const [oswaldLoaded] = useFonts({
@@ -35,11 +38,15 @@ export default function Root() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <LocationContextProvider>
-          <RestaurantsContextProvider>
-            <RestaurantsNavigator />
-          </RestaurantsContextProvider>
-        </LocationContextProvider>
+        <AuthenticationContextProvider>
+          <FavouritesContextProvider>
+            <LocationContextProvider>
+              <RestaurantsContextProvider>
+                <RestaurantsNavigator />
+              </RestaurantsContextProvider>
+            </LocationContextProvider>
+          </FavouritesContextProvider>
+        </AuthenticationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
