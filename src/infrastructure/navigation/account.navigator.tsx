@@ -1,7 +1,7 @@
-import { ThemedText } from "@/components/ThemedText";
+import { AccountScreen } from "@/src/features/account/screens/account.screen";
+import { LoginScreen } from "@/src/features/account/screens/login.screen";
+import { RegisterScreen } from "@/src/features/account/screens/register.screen";
 import { createStackNavigator } from "@react-navigation/stack";
-import { View } from "react-native";
-
 const Stack = createStackNavigator();
 
 export const AccountNavigator = () => (
@@ -10,21 +10,8 @@ export const AccountNavigator = () => (
       headerShown: false,
     }}
   >
-    <Stack.Screen
-      name="Main"
-      component={() => (
-        <View>
-          <ThemedText>Account Screen</ThemedText>
-        </View>
-      )}
-    />
-    <Stack.Screen
-      name="Login"
-      component={() => (
-        <View>
-          <ThemedText>Login Screen</ThemedText>
-        </View>
-      )}
-    />
+    <Stack.Screen name="Main" component={AccountScreen} />
+    <Stack.Screen name="Login" component={LoginScreen} />
+    <Stack.Screen name="Regiser" component={RegisterScreen} />
   </Stack.Navigator>
 );
