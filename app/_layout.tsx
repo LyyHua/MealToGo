@@ -24,16 +24,15 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
-  
 
   return (
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
       <AuthenticationContextProvider>
         <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false }}/>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         </Stack>
       </AuthenticationContextProvider>
-        </ThemeProvider>
+    </ThemeProvider>
   );
 }

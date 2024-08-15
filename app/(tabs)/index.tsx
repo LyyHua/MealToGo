@@ -1,11 +1,10 @@
 import { Lato_400Regular } from "@expo-google-fonts/lato";
 import { Oswald_400Regular, useFonts } from "@expo-google-fonts/oswald";
 import ExpoStatusBar from "expo-status-bar/build/ExpoStatusBar";
-import { AuthenticationContextProvider } from "@/src/services/authentication/authentication.context";
 import { FavouritesContextProvider } from "@/src/services/favorites/favorites.context";
-import { LocationContextProvider } from "@/src/services/location/location.context";
 import { RestaurantsContextProvider } from "@/src/services/restaurants/restaurants.context";
 import { RestaurantsNavigator } from "@/src/infrastructure/navigation/restaurants.navigator";
+import { LocationContextProvider } from "@/src/services/location/location.context";
 
 export default function Root() {
   const [oswaldLoaded] = useFonts({
@@ -19,15 +18,13 @@ export default function Root() {
   }
   return (
     <>
-        <AuthenticationContextProvider>
-          <FavouritesContextProvider>
-            <LocationContextProvider>
-              <RestaurantsContextProvider>
-                <RestaurantsNavigator/>
-              </RestaurantsContextProvider>
-            </LocationContextProvider>
-          </FavouritesContextProvider>
-        </AuthenticationContextProvider>
+      <FavouritesContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <RestaurantsNavigator />
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
+      </FavouritesContextProvider>
       <ExpoStatusBar style="auto" />
     </>
   );

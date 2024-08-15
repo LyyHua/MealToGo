@@ -12,8 +12,11 @@ import { RestaurantInfoCard } from "../components/restaurant-info.component";
 import { Search } from "../components/search.component";
 import { FavouritesBar } from "@/src/components/favorites/favourites-bar.component";
 import { FavouritesContext } from "@/src/services/favorites/favorites.context";
+import { LocationContext } from "@/src/services/location/location.context";
 
 export const RestaurantsScreen = ({ navigation }: { navigation: any }) => {
+  const { location } = useContext(LocationContext);
+  console.log(location);
   const { isLoading, restaurants } = useContext(RestaurantsContext);
   const { favourites } = useContext(FavouritesContext);
   const [isToggled, setIsToggled] = useState(false);

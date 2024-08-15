@@ -18,7 +18,8 @@ export const RestaurantsContextProvider = ({ children }) => {
     setIsLoading(true);
     setRestaurants([]);
 
-    window.setTimeout(() => {
+    // eslint-disable-next-line no-undef
+    setTimeout(() => {
       restaurantsRequest(loc)
         .then(restaurantsTransform)
         .then((results) => {
