@@ -14,7 +14,6 @@ const Map = styled(MapView)`
 export const MapScreen = ({ navigation }: { navigation: any }) => {
   const { location } = useContext(LocationContext);
   const { restaurants = [] } = useContext(RestaurantsContext);
-
   const [latDelta, setLatDelta] = useState(0);
 
   useEffect(() => {
