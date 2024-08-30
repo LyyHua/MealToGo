@@ -1,9 +1,16 @@
-import { SafeAreaView, Text } from "react-native";
+import { SettingsNavigator } from "@/src/infrastructure/navigation/settings.navigator";
+import { createStackNavigator } from "@react-navigation/stack";
 
-export default function setting() {
+const Setting = createStackNavigator();
+
+export default function Settings() {
   return (
-    <SafeAreaView>
-      <Text>Setting</Text>
-    </SafeAreaView>
+    <Setting.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+        <Setting.Screen name="Settings" component={SettingsNavigator} />
+    </Setting.Navigator>
   );
-}
+};

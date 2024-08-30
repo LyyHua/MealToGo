@@ -14,12 +14,13 @@ export const FavouritesBar = ({
   favourites: any;
   onNavigate: any;
 }) => {
+  console.log(favourites);
   if (!favourites.length) {
     return null;
   }
   return (
     <FavouritesWrapper>
-      <Spacer size="large" position="left">
+      <Spacer size="large" position="top">
         <ThemedText type="title">Favourites</ThemedText>
       </Spacer>
 
